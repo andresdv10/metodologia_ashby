@@ -345,21 +345,117 @@
     }
 
     @media print{
-      body{background: white !important; color: #111 !important;}
-      .title, .card, .chip, button, .step, .kpi, .chartWrap, .caseBox, .refs .ref{box-shadow:none !important;}
-      .wrap{max-width:none; padding: 0.8cm}
-      .btns{display:none !important}
-      .title{border-color:#ddd !important}
-      .card{border-color:#ddd !important; background: #fff !important}
-      .card .hd{background:#f6f6f6 !important; border-bottom-color:#e5e5e5 !important}
-      .card .hd h2{color:#444 !important}
-      .step,.kpi,.chartWrap,.caseBox,.refs .ref{border-color:#e5e5e5 !important; background:#fff !important}
-      .st p, .hint, .chartNote, .refs{color:#333 !important}
-      .formula{border-color:#bbb !important; background:#fafafa !important; color:#111 !important}
-      .pill{border-color:#e5e5e5 !important; background:#fff !important; color:#333 !important}
-      .num{color:#111 !important}
-      footer{color:#333 !important}
-      .lightbox{display:none !important}
+      @page{
+        size: A4 portrait;
+        margin: 10mm;
+      }
+
+      html, body{
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      body{
+        margin: 0 !important;
+        color: var(--text) !important;
+        background:
+          radial-gradient(1200px 700px at 15% 10%, rgba(125,211,252,0.22), transparent 55%) !important,
+          radial-gradient(1100px 700px at 85% 15%, rgba(167,139,250,0.20), transparent 55%) !important,
+          radial-gradient(900px 600px at 55% 90%, rgba(52,211,153,0.18), transparent 55%) !important,
+          linear-gradient(180deg, #060a14, var(--bg)) !important;
+      }
+
+      .wrap{
+        max-width: none !important;
+        padding: 8mm !important;
+      }
+
+      .btns{
+        display:none !important;
+      }
+
+      .lightbox{
+        display:none !important;
+      }
+
+      .title,
+      .card,
+      .chip,
+      .step,
+      .kpi,
+      .chartWrap,
+      .caseBox,
+      .refs .ref{
+        box-shadow: none !important;
+      }
+
+      .title{
+        border: 1px solid rgba(255,255,255,0.10) !important;
+        background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03)) !important;
+      }
+
+      .card{
+        border: 1px solid rgba(255,255,255,0.10) !important;
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)) !important;
+      }
+
+      .card .hd{
+        background: rgba(0,0,0,0.14) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+      }
+
+      .card .hd h2{
+        color: var(--muted) !important;
+      }
+
+      .chip{
+        border: 1px solid rgba(255,255,255,0.10) !important;
+        background: rgba(255,255,255,0.05) !important;
+        color: var(--muted) !important;
+      }
+
+      .step,
+      .kpi,
+      .caseBox,
+      .refs .ref{
+        border: 1px solid rgba(255,255,255,0.10) !important;
+        background: rgba(255,255,255,0.045) !important;
+      }
+
+      .chartWrap{
+        border: 1px solid rgba(255,255,255,0.10) !important;
+        background: rgba(255,255,255,0.03) !important;
+      }
+
+      .formula{
+        border: 1px dashed rgba(255,255,255,0.18) !important;
+        background: rgba(0,0,0,0.12) !important;
+        color: rgba(255,255,255,0.90) !important;
+      }
+
+      .pill{
+        border: 1px solid rgba(255,255,255,0.10) !important;
+        background: rgba(255,255,255,0.045) !important;
+        color: var(--muted) !important;
+      }
+
+      .title p,
+      .st p,
+      .hint,
+      .chartNote,
+      .refs,
+      footer{
+        color: var(--muted) !important;
+      }
+
+      .num{
+        color: rgba(0,0,0,0.75) !important;
+      }
+
+      img{
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
     }
   </style>
 </head>
